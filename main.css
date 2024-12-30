@@ -1,12 +1,5 @@
-#OuterDiv{
+#OutsideDiv{
     display: flex;
-    padding: 80px;
-    width: 100vw;
-    height: 100vh;
-}
-#mainDiv{
-    display: flex;
-    justify-content: center
-    width: 100vw;
-    height: 100vh;
+    margin: 5px;
+    padding: 10px;
 }
