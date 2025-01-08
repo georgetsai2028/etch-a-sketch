@@ -30,6 +30,7 @@ outsideContainter.style.flexDirection = "column";
 outsideContainter.style.margin = "1px";
 outsideContainter.style.padding = "50px";
 outsideContainter.style.border = "5px solid black";
+outsideContainter.style.backgroundColor = "#FFA0A0";
 
 const title = document.createElement("h1");
 title.style.margin = "0 0 20px 0";
@@ -37,13 +38,15 @@ title.style.textAlign = "center";
 title.textContent = "Etch-A-Sketch";
 outsideContainter.appendChild(title);
 
+const sizeInput = document.createElement("button");
+sizeInput.textContent = "Choose Grid Size"
+sizeInput.style.display = "flex";
+title.appendChild(sizeInput);
+
+sizeInput.addEventListener
+
 const mainContainer = document.getElementById("mainDiv");
 mainContainer.style.flex = "1";
 outsideContainter.appendChild(mainContainer);
 
-const sizeInput = document.createElement("button");
-sizeInput.textContent = "Choose Grid Size"
-sizeInput.style.display = "flex";
-sizeInput.style.height = "16px";
-sizeInput.style.width = "16px";
 
