@@ -1,32 +1,25 @@
 function divCreator(width, height){
     const mainContainer = document.getElementById("mainDiv");
-    mainContainer.style.display = "grid";
+    mainContainer.style.display = "flex";
     mainContainer.style.width = "100vw";
     mainContainer.style.height = "100vh";
     mainContainer.style.justifyContent = "center";
     mainContainer.style.alignItems = "center";
     mainContainer.style.flexWrap = "wrap";
-    for (let i = 0; i < width; i++)
+    const totalDivs = width * height;
+    const divWidth = 100 / width;
+    for (let i = 0; i < totalDivs; i++)
     {
-        const widthDiv = document.createElement("div");
-        widthDiv.style.display = "flex";
-        widthDiv.style.width ="25%";
-        mainContainer.appendChild(widthDiv);
-        widthDiv.addEventListener("mouseenter", () => {
-            widthDiv.style.backgroundColor = "black";
+        const gridDiv = document.createElement("div");
+        gridDiv.style.width = `${divWidth}%`;
+        gridDiv.style.height = `${divWidth}vh`;
+        gridDiv.textContent = i + 1;
+        gridDiv.style.display = "flex";
+        mainContainer.appendChild(gridDiv);
+
+        gridDiv.addEventListener("mouseenter", () => {
+            gridDiv.style.backgroundColor = "black";
         })
-        for (let j = 0; j < height; j++)
-        {
-            const heightDiv = document.createElement("div");
-            heightDiv.style.display = "flex";
-            heightDiv.style.width = "25%";
-            mainContainer.appendChild(heightDiv)
-            heightDiv.addEventListener("mouseenter", () => {
-                heightDiv.style.backgroundColor = "black";
-            })
-            break;
-            
-        }
     }
 }
 divCreator(16,16);
