@@ -1,7 +1,6 @@
 function divCreator(width, height){
     const mainContainer = document.getElementById("mainDiv");
     mainContainer.style.display = "flex";
-    mainContainer.style.width = "100vw";
     mainContainer.style.height = "100vh";
     mainContainer.style.justifyContent = "center";
     mainContainer.style.alignItems = "center";
@@ -15,6 +14,8 @@ function divCreator(width, height){
         gridDiv.style.height = `${divWidth}vh`;
         gridDiv.textContent = i + 1;
         gridDiv.style.display = "flex";
+        gridDiv.style.alignItems = "center";
+        gridDiv.style.justifyContent = "center";
         mainContainer.appendChild(gridDiv);
 
         gridDiv.addEventListener("mouseenter", () => {
@@ -23,4 +24,26 @@ function divCreator(width, height){
     }
 }
 divCreator(16,16);
+const outsideContainter = document.getElementById("outsideDiv");
+outsideContainter.style.display = "flex";
+outsideContainter.style.flexDirection = "column";
+outsideContainter.style.margin = "1px";
+outsideContainter.style.padding = "50px";
+outsideContainter.style.border = "5px solid black";
+
+const title = document.createElement("h1");
+title.style.margin = "0 0 20px 0";
+title.style.textAlign = "center";
+title.textContent = "Etch-A-Sketch";
+outsideContainter.appendChild(title);
+
+const mainContainer = document.getElementById("mainDiv");
+mainContainer.style.flex = "1";
+outsideContainter.appendChild(mainContainer);
+
+const sizeInput = document.createElement("button");
+sizeInput.textContent = "Choose Grid Size"
+sizeInput.style.display = "flex";
+sizeInput.style.height = "16px";
+sizeInput.style.width = "16px";
 
