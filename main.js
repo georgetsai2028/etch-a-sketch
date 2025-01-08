@@ -1,5 +1,6 @@
 function divCreator(width, height){
     const mainContainer = document.getElementById("mainDiv");
+    mainContainer.innerHTML = "";
     mainContainer.style.display = "flex";
     mainContainer.style.height = "100vh";
     mainContainer.style.justifyContent = "center";
@@ -12,7 +13,6 @@ function divCreator(width, height){
         const gridDiv = document.createElement("div");
         gridDiv.style.width = `${divWidth}%`;
         gridDiv.style.height = `${divWidth}vh`;
-        gridDiv.textContent = i + 1;
         gridDiv.style.display = "flex";
         gridDiv.style.alignItems = "center";
         gridDiv.style.justifyContent = "center";
@@ -23,7 +23,7 @@ function divCreator(width, height){
         })
     }
 }
-divCreator(16,16);
+
 const outsideContainter = document.getElementById("outsideDiv");
 outsideContainter.style.display = "flex";
 outsideContainter.style.flexDirection = "column";
@@ -43,10 +43,21 @@ sizeInput.textContent = "Choose Grid Size"
 sizeInput.style.display = "flex";
 title.appendChild(sizeInput);
 
-sizeInput.addEventListener
+sizeInput.addEventListener("click", () => {
+    const gridSize = prompt("Enter number of squares under 100 ex: 50 ");
+    const size = parseInt(gridSize);
+
+    if (!isNaN(size) && size > 0 && size <= 100)
+    {
+        divCreator(size, size)
+    }
+    else
+    {
+        alert("Please enter a number between 0 - 100")
+    }
+});
 
 const mainContainer = document.getElementById("mainDiv");
 mainContainer.style.flex = "1";
 outsideContainter.appendChild(mainContainer);
-
 
